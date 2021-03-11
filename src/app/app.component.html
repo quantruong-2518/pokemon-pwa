@@ -1,0 +1,35 @@
+<div class="pokedex">
+  <h1>Version 5.4</h1>
+  
+  <button id="add-button" class="add-button">Add to home screen</button>
+
+  <div class="search-bar">
+    <input
+      (keyup)="inputChanges($event.target.value)"
+      type="number"
+      id="search-pk"
+    />
+    <button (click)="searchPokemon()" class="">search</button>
+  </div>
+
+  <h1>New update !</h1>
+
+  <h1 class="pokemon-name">Pokemon-name: {{ pkmName }}</h1>
+
+  <div class="pokemon-display">
+    <table>
+      <tr>
+        <th>Side</th>
+        <th>Image</th>
+      </tr>
+      <tr *ngFor="let img of pkmImages">
+        <td *ngIf="img[1]">
+          {{ img[0] }}
+        </td>
+        <td>
+          <img *ngIf="img[1]" [src]="img[1]" alt="img-cover" />
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
